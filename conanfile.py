@@ -21,8 +21,12 @@ class HelloConanConan(ConanFile):
 
     def build(self):
         cmake = CMake(self)
-        cmake.configure(source_folder="src")
-        cmake.build()
+        if self.should_configure:
+            cmake.configure(source_folder="src")
+        if self.should_build:
+            cmake.build()
+        if self.should_test:
+            cmake.test()
 
         # Explicit way:
         # self.run('cmake %s/hello %s'
