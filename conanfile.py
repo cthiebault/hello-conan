@@ -14,6 +14,7 @@ class HelloConanConan(ConanFile):
     default_options = {"shared": False, "fPIC": True}
     generators = "cmake"
     exports_sources = "src/*"
+    build_requires = "gtest/1.10.0"
 
     def config_options(self):
         if self.settings.os == "Windows":
@@ -26,7 +27,7 @@ class HelloConanConan(ConanFile):
         if self.should_build:
             cmake.build()
         if self.should_test:
-            cmake.test()
+            cmake.test(output_on_failure=True)
 
         # Explicit way:
         # self.run('cmake %s/hello %s'
