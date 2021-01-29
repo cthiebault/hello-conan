@@ -1,10 +1,15 @@
 #include <iostream>
+#include <string>
 #include "conan.h"
 
-void helloConan(){
-    #ifdef NDEBUG
-    std::cout << "hello-conan/0.1.0: Hello World Release!" <<std::endl;
-    #else
-    std::cout << "hello-conan/0.1.0: Hello World Debug!" <<std::endl;
-    #endif
+std::string whoAmI() {
+    return "Conan";
+}
+
+void helloConan() {
+#ifdef NDEBUG
+    std::cout << "hello-conan/0.1.0: Hello " + whoAmI() + " Release!" <<std::endl;
+#else
+    std::cout << "hello-conan/0.1.0: Hello " + whoAmI() + " Debug!" << std::endl;
+#endif
 }

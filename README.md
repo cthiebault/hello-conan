@@ -2,9 +2,7 @@
 
 [![Build Status](https://travis-ci.com/cthiebault/hello-conan.svg?branch=master)](https://travis-ci.com/cthiebault/hello-conan)
 
-Sandbox to explore Conan feature
-
-
+Sandbox to explore Conan features
 
 
 ## How To
