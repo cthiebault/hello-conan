@@ -11,3 +11,6 @@ if [[ "$(uname -s)" == 'Darwin' ]]; then
 fi
 
 python build.py
+pwd
+find . -type f -name "*.xml"
+find /home/conan/.conan/data/ -type f -name "*.xml"
